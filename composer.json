@@ -27,5 +27,12 @@
         "psr-4": {
             "MMHK\\SMS\\": "src"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MMHK\\SMS\\SMSServiceProvider"
+            ]
+        }
     }
 }

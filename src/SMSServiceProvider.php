@@ -57,5 +57,18 @@ class SMSServiceProvider extends ServiceProvider
              */
             return $app->make(GatewayInterface::class);
         });
+
+        /**
+         * 兼容项目ENV常量
+         */
+        if (!defined('ENV_DEV')) {
+            define('ENV_DEV', 'local');
+        }
+        if (!defined('ENV_TEST')) {
+            define('ENV_TEST', 'testing');
+        }
+        if (!defined('ENV_PRO')) {
+            define('ENV_PRO', 'production');
+        }
     }
 }
