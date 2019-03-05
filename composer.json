@@ -1,0 +1,31 @@
+{
+    "name": "mmhk/mm-laravel-sms",
+    "description": "SMS provider for Laravel",
+    "type": "project",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "SamZhou",
+            "email": "sam@mixmedia.com"
+        }
+    ],
+    "require": {
+        "php": ">=7",
+        "guzzlehttp/guzzle": "^6.2",
+        "psr/http-message": "^1.0",
+        "composer/composer": "^1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MMHK\\SMS\\Test\\": "tests"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "MMHK\\SMS\\": "src"
+        }
+    }
+}
