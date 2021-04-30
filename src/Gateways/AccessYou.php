@@ -2,6 +2,7 @@
 
 namespace MMHK\SMS\Gateways;
 
+use App\Services\SMS\Traits\CreateMessage;
 use MMHK\SMS\Contracts\GatewayInterface;
 use MMHK\SMS\Contracts\MessageInterface;
 use MMHK\SMS\SMSSentEvent;
@@ -12,7 +13,7 @@ use MMHK\SMS\Job\SMSSendJob;
 
 class AccessYou implements GatewayInterface
 {
-    use HasHttpRequest, Util;
+    use HasHttpRequest, Util, CreateMessage;
     const
         ENDPOINT_URL = 'http://api.accessyou.com/sms/sendsms-utf8-senderid.php',
         ENDPOINT_LANG = 2, // tw 0; cn 1; unicode 2

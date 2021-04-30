@@ -29,4 +29,11 @@ interface GatewayInterface
      * @return array
      */
     function sendSync(MessageInterface $message);
+
+    /**
+     * @param $to
+     * @param $content
+     * @return MessageInterface
+     */
+    public function createMessage($to, $content);
 }

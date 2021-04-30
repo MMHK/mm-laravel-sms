@@ -9,6 +9,7 @@
 namespace MMHK\SMS\Gateways;
 
 
+use App\Services\SMS\Traits\CreateMessage;
 use MMHK\SMS\Contracts\GatewayInterface;
 use MMHK\SMS\Contracts\MessageInterface;
 use MMHK\SMS\Job\SMSSendJob;
@@ -20,7 +21,7 @@ use MMHK\SMS\Traits\Util;
 class WaveCell implements GatewayInterface
 {
 
-    use HasHttpRequest, Util;
+    use HasHttpRequest, Util, CreateMessage;
     const
         STATUS_QUEUED = 'QUEUED',
         STATUS_REJECTED = 'REJECTED',

@@ -1,6 +1,7 @@
 <?php
 namespace MMHK\SMS\Gateways;
 
+use App\Services\SMS\Traits\CreateMessage;
 use MMHK\SMS\Contracts\GatewayInterface;
 use MMHK\SMS\Contracts\MessageInterface;
 use MMHK\SMS\SMSSentEvent;
@@ -11,7 +12,7 @@ use MMHK\SMS\Job\SMSSendJob;
 
 class XGate implements GatewayInterface
 {
-    use HasHttpRequest, Util;
+    use HasHttpRequest, Util, CreateMessage;
     const
         ENDPOINT_URL = 'http://smsc.xgate.com.hk/smshub/sendsms',
         ENDPOINT_FORMAT = 'JSON';
